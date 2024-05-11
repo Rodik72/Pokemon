@@ -12,10 +12,6 @@ const Arena: React.FC<{
 }> = ({ firstPokemon, setFirstPokemon, secondPokemon, setSecondPokemon }) => {
   const [battleLogState, setBattleLogState] = useState<string[]>([]);
 
-  useEffect(() => {
-    pokemonBattle();
-  });
-
   const pokemonBattle = () => {
     let battleLog = [];
     let firstPokemonCpy = _.cloneDeep(firstPokemon);
@@ -68,6 +64,11 @@ const Arena: React.FC<{
       setBattleLogState(battleLog);
     }
   };
+
+  useEffect(() => {
+    pokemonBattle();
+    // eslint-disable-next-line
+  }, []);
 
   return (
     <>
