@@ -41,7 +41,8 @@ const Homepage: React.FC<{
       </div>
       <div
         style={{
-          display: "ruby",
+          display: "flex",
+          flexWrap: "wrap",
         }}
       >
         {pokemons &&
